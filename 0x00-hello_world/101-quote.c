@@ -6,12 +6,9 @@
  */
 int main(void)
 {
-	char quote[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	int i;
-	int size = sizeof(quote);
+	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	for (i = 0; i < size; i++)
-		putchar(quote[i]);
-	putchar('\n');
+	while (*s)
+		putchar(*s++);
 	return (1);
 }

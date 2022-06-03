@@ -13,7 +13,8 @@ int main(void)
 	while (i < 9)
 	{
 		int j;
-		for (j = i; j < 10; j++)
+
+		for (j = i + 1; j < 10; j++)
 		{
 			putchar(i + '0');
 			putchar(j + '0');

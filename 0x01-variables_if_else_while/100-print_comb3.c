@@ -10,7 +10,7 @@ int main(void)
 	int i;
 
 	i = 0;
-	while (i < 10)
+	while (i < 9)
 	{
 		int j;
 		for (j = i; j < 10; j++)

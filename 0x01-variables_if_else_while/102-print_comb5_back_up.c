@@ -8,9 +8,7 @@
 int main(void)
 {
 	int i;
-	int l;
-
-	l = 1;
+	
 	for (i = 0; i < 10; i++)
 	{
 		int j;
@@ -21,8 +19,11 @@ int main(void)
 
 			for (k = i; k < 10; k++)
 			{
+				int l;
+
 				for (l = j; l < 10; l++)
 				{
+
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
@@ -36,7 +37,6 @@ int main(void)
 						putchar(' ');
 					}
 				}
-
 			}
 		}
 	}

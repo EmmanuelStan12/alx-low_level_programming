@@ -13,22 +13,22 @@ int main(void)
 	{
 		int j;
 
-		for (j = i; j < 10; j++)
+		for (j = 0; j < 10; j++)
 		{
 			int k;
 
-			for (k = j; k < 10; k++)
+			for (k = i; k < 10; k++)
 			{
 				int l;
 
-				for (l = k; l < 10; l++)
+				for (l = j + 1; l < 10; l++)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
 					putchar(k + '0');
 					putchar(l + '0');
-					if (i == 9 && j == 9 && k == 9 && l == 9)
+					if (i == 9 && j == 8 && k == 9 && l == 9)
 						putchar('\n');
 					else
 					{

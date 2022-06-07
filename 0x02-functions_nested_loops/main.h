@@ -1,0 +1,14 @@
+#ifndef HEADER_FILE
+#define HEADER_FILE
+
+void print_alphabet(void);
+
+void print_alphabet_x10(void);
+
+void fibonacci(void);
+
+int _putchar(int c);
+
+int _islower(int c);
+
+#endif

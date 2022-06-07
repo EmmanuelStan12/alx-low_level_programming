@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_alphabet_x10 - Entry point
@@ -7,12 +7,18 @@
  */
 void print_alphabet_x10(void)
 {
-	char c;
+	int i;
 
-	c = 'a';
-	while (c != 123)
+	for (i = 0; i < 9; i++)
 	{
-		putchar(c);
-		c++;
+		char c;
+
+		c = 'a';
+		while (c != 123)
+		{
+			_putchar(c);
+			c++;
+		}
+		_putchar('\n');
 	}
 }

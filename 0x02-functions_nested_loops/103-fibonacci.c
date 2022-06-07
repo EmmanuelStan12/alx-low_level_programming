@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * compute_fibonacci - computes first 50 fibonacci sequence
+ * compute_fibonacci_sum - computes first 50 fibonacci sequence
  *
  * Return: Always 0 (Success)
  */
@@ -12,9 +12,9 @@ void compute_fibonacci_sum(void)
 	int prev_1 = 2;
 	int sum;
 
-	sum = 0;
+	sum = prev_1;
 	while (i < 4000000)
-	{	
+	{
 		i = prev_1 + prev_2;
 		prev_2 = prev_1;
 		prev_1 = i;

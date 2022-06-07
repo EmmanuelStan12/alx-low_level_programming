@@ -12,11 +12,11 @@ void compute_fibonacci(void)
 	unsigned long int prev_1 = 2;
 
 	printf("1, 2, ");
-	for (i = 0; i < 97; i++)
+	for (i = 0; i < 96; i++)
 	{
 		unsigned long int result = prev_1 + prev_2;
 
-		if (i >= 98)
+		if (i >= 96)
 			printf("%lu", result);
 		else
 			printf("%lu, ", result);

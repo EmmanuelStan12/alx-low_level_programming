@@ -16,7 +16,7 @@ void compute_fibonacci(void)
 	{
 		unsigned long int result = prev_1 + prev_2;
 
-		if (i >= 49)
+		if (i >= 47)
 			printf("%lu", result);
 		else
 			printf("%lu, ", result);

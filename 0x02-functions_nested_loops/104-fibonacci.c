@@ -12,7 +12,7 @@ void compute_fibonacci(void)
 	unsigned long int prev_1 = 2;
 
 	printf("1, 2, ");
-	for (i = 0; i < 95; i++)
+	for (i = 0; i < 97; i++)
 	{
 		unsigned long int result = prev_1 + prev_2;
 

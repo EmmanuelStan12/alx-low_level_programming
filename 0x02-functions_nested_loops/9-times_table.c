@@ -18,7 +18,6 @@ void times_table(void)
 			char result;
 
 			result = i * j;
-			
 			if (result == 0 && j == 0)
 			{
 				_putchar(result + '0');

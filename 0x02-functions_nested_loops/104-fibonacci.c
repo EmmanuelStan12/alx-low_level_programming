@@ -8,18 +8,18 @@
 void compute_fibonacci(void)
 {
 	int i;
-	unsigned long int prev_2 = 1;
-	unsigned long int prev_1 = 2;
+	unsigned long long int prev_2 = 1;
+	unsigned long long int prev_1 = 2;
 
 	printf("1, 2, ");
 	for (i = 0; i < 96; i++)
 	{
-		unsigned long int result = prev_1 + prev_2;
+		unsigned long long int result = prev_1 + prev_2;
 
 		if (i >= 95)
-			printf("%lu", result);
+			printf("%llu", result);
 		else
-			printf("%lu, ", result);
+			printf("%llu, ", result);
 		prev_2 = prev_1;
 		prev_1 = result;
 	}

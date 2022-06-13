@@ -2,8 +2,7 @@
 
 /**
  * reset_to_98 - resets the given variable to 98
- * @*n: variable to reset
- * Return: void
+ * @n: variable to reset
  */
 void reset_to_98(int *n)
 {

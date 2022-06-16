@@ -22,17 +22,11 @@ char *cap_string(char *c)
 
 		for (k = 0; delimiters[k] != '\0'; k++)
 		{
-			if (*(c + i) == delimiters[k])
-			{
-				int j = i + 1;
-				if (*(c + j) != '\0')
-				{
-					while (!(*(c + j) >= 97) && !(*(c + j) <= 122))
-						j++;
-					if (*(c + j) >= 97 && *(c + j) <= 122)
-						*(c + j) = *(c + j) - 32;
-				}
-			}
+			int j;
+
+			j = i + 1;
+			if (*(c + i) == delimiters[k] && c[j] >= 97 && c[j] <= 122)
+				*(c + j) = c[j] - 32;
 		}
 		i++;
 	}

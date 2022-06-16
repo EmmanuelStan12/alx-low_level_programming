@@ -2,11 +2,13 @@
 #include <stdio.h>
 
 /**
- * _add_i - adds two numbers
+ * _add - adds two numbers
  * @n1: first number
  * @n2: second number
- * i: size of n1
- * j: size of n2
+ * @i: size of n1
+ * @j: size of n2
+ * @r: destination of the result
+ * @size_r: size of the result
  * Return: the final result
  */
 char *_add(char *n1, char *n2, int i, int j, char *r, int size_r)
@@ -14,24 +16,32 @@ char *_add(char *n1, char *n2, int i, int j, char *r, int size_r)
 	int i_ptr;
 	int j_ptr;
 	int remainder;
-	
+	int k;
+
 	i_ptr = i - 1;
 	j_ptr = j - 1;
+	k = size_r - 1;
 	remainder = 0;
-	while (i_ptr > 0)
+	while (k >= 0)
 	{
 		int result;
 
 		result = (n1[i_ptr] - '0') + (n2[j_ptr] - '0') + remainder;
-		if(result > 10)
+		if (result > 10)
 		{
-			*(r + i_ptr) = result % 10;
+			r[k] = (result % 10) + '0';
 			remainder = result / 10;
+		}
+		else
+		{
+			r[k] = result + '0';
+			remainder = 0;
 		}
 		j_ptr--;
 		i_ptr--;
+		k--;
 	}
-	return (ptr - i_ptr);
+	return (r);
 }
 
 /**
@@ -50,56 +60,26 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	j = 0;
 	while (n1[i] != '\0')
 		i++;
-	while (n2[i] != '\0')
+	while (n2[j] != '\0')
 		j++;
 	if (i > size_r || j > size_r)
 		return (0);
 	if (i > j)
 	{
-		int k;
-		char *result = _add(n1, n2, i, j);
+		char *result = _add(n1, n2, i, j, r, size_r);
 
-		k = 0;
-		while (k < size_r && result[k] != '\0')
-		{
-			*(r + k) = result[k];
-			k++;
-		}
-		if (*(result + k) != '\0')
-			return (0);
-		else
-			return (r);
+		return (result);
 	}
 	else if (j > i)
 	{
-		int k;
-		char *result = _add(n1, n2, j, i);
+		char *result = _add(n1, n2, j, i, r, size_r);
 
-		k = 0;
-		while (k < size_r && result[k] != '\0')
-		{
-			*(r + k) = result[k];
-			k++;
-		}
-		if (*(result + k) != '\0')
-			return (0);
-		else
-			return (r);
+		return (result);
 	}
 	else
-	{	
-		int k;
-		char *result = _add(n1, n2, i, j);
+	{
+		char *result = _add(n1, n2, i, j, r, size_r);
 
-		k = 0;
-		while (k < size_r && result[k] != '\0')
-		{
-			*(r + k) = result[k];
-			k++;
-		}
-		if (*(result + k) != '\0')
-			return (0);
-		else
-			return (r);
+		return (result);
 	}
 }

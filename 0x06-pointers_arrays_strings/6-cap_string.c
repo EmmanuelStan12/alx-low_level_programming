@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * cap_string - capitalizes the given string
@@ -12,7 +11,6 @@ char *cap_string(char *c)
 	char delimiters[] = " \t\n,;,.!,?,\"(){}";
 
 	i = 0;
-	printf("Before while loop\n");
 	while (*(c + i) != '\0')
 	{
 		int k;

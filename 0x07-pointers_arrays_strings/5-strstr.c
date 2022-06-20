@@ -13,6 +13,8 @@ char *_strstr(char *haystack, char *needle)
 	char *address;
 
 	address = NULL;
+	if (*needle == '\0')
+		return (haystack);
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
 		int j;
@@ -26,7 +28,7 @@ char *_strstr(char *haystack, char *needle)
 				address = &haystack[i + j];
 			}
 		}
-		if (needle[j] == '\0' && address != NULL)
+		if (needle[j] == '\0')
 			break;
 		i++;
 	}

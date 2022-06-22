@@ -4,7 +4,7 @@
  * _sqrt - returns the square root of a number
  * @x: number to be evaluated
  * @y: supposed root
- * Return the natural square root or -1
+ * Return: the natural square root or -1
  */
 int _sqrt(int x, int y)
 {

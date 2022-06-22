@@ -24,12 +24,12 @@ int eval(char *s, int i, int j)
 	if (i >= j)
 		return (1);
 	if (*(s + i) == *(s + j))
-		return eval(s, i + 1, j - 1);
+		return (eval(s, i + 1, j - 1));
 	return (0);
 }
 
 /**
- * is_palidrome - evaluates if a string is a palindrome
+ * is_palindrome - evaluates if a string is a palindrome
  * @s: string to be evaluated
  * Return: 1, if the string is a palindrome and 0, if otherwise
  */

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 /**
  * main - Entry point
@@ -36,5 +35,5 @@ int main(int argc, char *argv[])
 		i++;
 	}
 	printf("%d\n", sum);
-	return (0);
+	return (sum);
 }

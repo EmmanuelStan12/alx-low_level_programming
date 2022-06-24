@@ -8,13 +8,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-
-	i = 0;
-	while (i < argc)
+	if (argc != 2)
 	{
-		printf("%s\n", argv[i]);
-		i++;
+		printf("Error\n");
+		return (1);
+	}
+	if (*argv[1] == '-')
+	{
+		printf("0\n");
+		return (1);
 	}
 	return (0);
 }

@@ -15,23 +15,25 @@ int main(int argc, char *argv[])
 
 	i = 1;
 	sum = 0;
-	if (argc == 1)
+	if (argc < 3)
 	{
 		printf("0\n");
 		return (1);
 	}
 	while (i < argc)
 	{
-		if (*argv[i] > '9' || *argv[i] < '0')
+		int j;
+
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!(isdigit(argv[i][j])))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			sum = sum + atoi(argv[i]);
-			i++;
-		}
+		sum = sum + atoi(argv[i]);
+		i++;
 	}
 	printf("%d\n", sum);
 	return (0);

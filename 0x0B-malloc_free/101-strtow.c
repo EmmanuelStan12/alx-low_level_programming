@@ -84,7 +84,7 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	size = _size(str);
-	if (size == 0)
+	if (size == 1)
 		return (NULL);
 	p = (char **) malloc(size * sizeof(char *));
 	if (p == NULL)

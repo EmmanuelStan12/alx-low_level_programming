@@ -27,7 +27,6 @@ char *argstostr(int ac, char **av)
 		size++;
 	}
 	size++;
-	printf("size: %d args: %d\n", size, ac);
 	p = malloc(size * sizeof(char));
 
 	if (p == NULL)

@@ -20,12 +20,12 @@ char *str_concat(char *s1, char *s2)
 		*p = '\0';
 		return (p);
 	}
-	if (s1 != null)
+	if (s1 != NULL)
 	{
 		while (s1[s1_size] != '\0')
 			s1_size++;
 	}
-	if (s2 != null)
+	if (s2 != NULL)
 	{
 		while (s2[s2_size] != '\0')
 			s2_size++;

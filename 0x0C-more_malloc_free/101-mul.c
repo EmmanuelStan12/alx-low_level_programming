@@ -34,7 +34,6 @@ int _size(char *num)
 	while (num[i] != '\0')
 		i++;
 	return (i);
-
 }
 
 /**
@@ -61,47 +60,18 @@ int _isdigit(char *num)
  * @size: length of the string
  * Return: the result of the conversion
  */
-int *_convert(char *num, int size)
+int _convert(char *num, int size)
 {
 	int i;
-	int *n;
+	int result;
 
 	i = 0;
-	n = malloc(size * sizeof(int));
+	result = 0;
 	while (*num != '\0')
 	{
-		*(n + i) = *num - '0';
+		result = result + ((*num - '0') * _pow(10, size - 1 - i));
 		i++;
 		num++;
-	}
-	return (n);
-}
-
-/**
- * _mul - computes the multiplication of two numbers
- * @num1 - pointer of the first number
- * @num2 - pointer to the second number
- * Return: the pointer to the result
- */
-int *_mul(char *n1, char *n2)
-{
-	int *num1;
-	int *num2;
-	int remainder;
-	int size1, size2;
-	int i, j;
-	
-	size1 = _size(n1);
-	size2 = _size(n2);
-	num1 = _convert(n1, size1);
-	num2 = _convert(n2, size2);
-	if (size1 > size2)
-	{
-		for (i = 0; i < size1; i++)
-			printf("%d", num1[i]);
-		putchar('\n');
-		for (j = 0; j < size2; j++)
-			printf("%d", num2[j]);
 	}
 	return (result);
 }
@@ -114,6 +84,11 @@ int *_mul(char *n1, char *n2)
  */
 int main(int argc, char **argv)
 {
+	char *n1;
+	char *n2;
+	int size1, size2;
+	int num1, num2;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -121,12 +96,15 @@ int main(int argc, char **argv)
 	}
 	n1 = argv[argc - 2];
 	n2 = argv[argc - 1];
+	size1 = _size(n1);
+	size2 = _size(n2);
 	if (!_isdigit(n1) || !_isdigit(n2))
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	
-	putchar('\n');
+	num1 = _convert(n1, size1);
+	num2 = _convert(n2, size2);
+	printf("%d\n", num1 * num2);
 	return (0);
 }

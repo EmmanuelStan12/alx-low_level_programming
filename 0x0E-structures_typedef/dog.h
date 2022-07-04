@@ -1,3 +1,5 @@
+#ifndef HEADER_H
+#define HEADER_H
 /**
  * struct dog - Dog object
  * @name: name of dog
@@ -20,3 +22,4 @@ void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 
 void free_dog(dog_t *d);
+#endif

@@ -45,7 +45,7 @@ void print_float(va_list sp)
 
 /**
  * print_all - prints all parameters given
- * @format - format of output
+ * @format: format of output
  * Return: void
  */
 void print_all(const char * const format, ...)
@@ -72,6 +72,7 @@ void print_all(const char * const format, ...)
 				tps[j].fun(ap);
 				if (format[i + 1] != '\0')
 					printf(", ");
+				break;
 			}
 			j++;
 		}

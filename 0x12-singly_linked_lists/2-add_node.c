@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_node: adds a node to the start of the list
+ * add_node - adds a node to the start of the list
  * @head: head of the list
  * @str: string to be copied
  * Return: the pointer to the first element

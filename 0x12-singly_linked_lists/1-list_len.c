@@ -1,6 +1,11 @@
 #include "lists.h"
 
-size_t print_list(const list_t *h)
+/**
+ * list_len - computes the size of a linked list
+ * @h: linked list
+ * Return: the size of the linked list
+ */
+size_t list_len(const list_t *h)
 {
 	list_t *head = (list_t *) h;
 	int size;

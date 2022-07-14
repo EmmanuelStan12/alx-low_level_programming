@@ -7,13 +7,15 @@
  */
 void free_list(list_t *head)
 {
-	while (head != NULL)
+	list_t *first;
+
+	first = head;
+	while (first != NULL)
 	{
 		list_t *h;
 
-		h = head;
-		while (h->next != NULL)
-			h = h->next;
-		free(h);
+		h = first->next;
+		free(first);
+		first = h;
 	}
 }

@@ -1,6 +1,8 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
+#define LENGTH 8
+
 #include <stdlib.h>
 #include <stdio.h>
 

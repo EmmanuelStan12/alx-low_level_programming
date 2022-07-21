@@ -86,6 +86,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 	int idx;
 	char *binary;
 
+	if (index >= (sizeof(unsigned long int) * LENGTH))
+		return (-1);
 	size = 0;
 	num = *n;
 	size = _size(num, index);

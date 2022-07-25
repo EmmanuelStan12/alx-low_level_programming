@@ -21,7 +21,7 @@ int file_exists(char *file)
 int main(int argc, char **argv)
 {
 	char *file_from, *file_to;
-	int o_file, i_file, sz;
+	int o_file, i_file, sz, wstatus;
 	char buffer[1024];
 	mode_t mode;
 
@@ -40,19 +40,27 @@ int main(int argc, char **argv)
 	file_to = argv[argc - 1];
 	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	o_file = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, mode);
-	if (o_file == -1 || access(file_to, W_OK))
+	if (o_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	while ((sz = read(i_file, buffer, sizeof(buffer))) > 0)
+	do
 	{
-		if (write(o_file, buffer, sz) != sz)
+		sz = read(i_file, buffer, sizeof(buffer));
+		if (sz == -1)
 		{
-			sz = -1;
-			break;
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
+		wstatus = write(o_file, buffer, sz);
+		if (wstatus == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			exit(99);
 		}
 	}
+	while (sz > 0);
 	if (close(i_file) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", i_file);

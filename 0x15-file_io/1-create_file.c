@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (file_d == -1)
 		return (0);
-	if (textcontent)
+	if (text_content)
 	{
 		status = write(file_d, text_content, size);
 		if (status == -1)

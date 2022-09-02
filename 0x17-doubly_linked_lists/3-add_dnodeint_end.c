@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - adds a node to the start of the list
+ * add_dnodeint_end - adds a node to the start of the list
  * @head: head of the list
  * @n: string to be copied
  * Return: the pointer to the first element
  */
-list_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *temp;
 	dlistint_t *h = *head;

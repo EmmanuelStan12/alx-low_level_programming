@@ -24,7 +24,8 @@ dlistint_t *insert_dnodeint_at_index(
 		temp->n = n;
 		temp->next = current;
 		temp->prev = NULL;
-		current->prev = temp;
+		if (current != NULL)
+			current->prev = temp;
 		*head = temp;
 		return (temp);
 	}

@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * sum_listint - sums a list of integers
+ * sum_dlistint - sums a list of integers
  * @head: pointer to the first item of the list
  * Return: the sum of the items in the list
  */

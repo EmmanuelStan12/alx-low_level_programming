@@ -12,6 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index;
 	hash_node_t *new_node, *elem;
 	hash_node_t **arr;
+	char *k;
 
 	if (key == NULL)
 		return (0);
@@ -27,6 +28,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (elem == NULL)
 	{
 		arr[index] = new_node;
+		return (1);
+	}
+	k = elem->key;
+	if (strcmp(k, key) == 0)
+	{
+		arr[index]->value = (char *) value;
 		return (1);
 	}
 	while (elem->next != NULL)

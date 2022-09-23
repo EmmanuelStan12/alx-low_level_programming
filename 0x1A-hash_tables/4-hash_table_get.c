@@ -27,7 +27,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	while (elem != NULL)
 	{
 		const char *k = elem->key;
-		
+
 		if (strcmp(k, key) == 0)
 			return (elem->value);
 		elem = elem->next;

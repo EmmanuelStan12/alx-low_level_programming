@@ -1,0 +1,5 @@
+# Usage:
+# make	# compile all binary
+
+all:
+	gcc school.c main.c -o school

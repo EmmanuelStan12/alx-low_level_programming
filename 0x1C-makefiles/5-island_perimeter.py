@@ -28,5 +28,5 @@ def island_perimeter(grid):
     for i, row in enumerate(grid):
         for j, cell in enumerate(row):
             if cell == 1:
-                perim += cell_perimiter(grid, i, j)
+                perim += cell_perimeter(grid, i, j)
     return perim

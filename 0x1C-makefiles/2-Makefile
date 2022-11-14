@@ -2,7 +2,7 @@
 # make -f 2-Makefile all
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = school.c main.c
 OBJ = ${SRC:.c=.o}
 NAME = school
 

@@ -40,14 +40,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		prev = current;
 		current = next_node(current, m);
-		printf("Value checked index [%ld] = [%d]\n", current->index, current->n);
+		printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
 		if (prev->index >= size)
 			return (NULL);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev->index, current->index);
 	while (prev != NULL && prev->index <= current->index)
 	{
-		printf("Value checked index [%ld] = [%d]\n", prev->index, prev->n);
+		printf("Value checked at index [%ld] = [%d]\n", prev->index, prev->n);
 		if (prev->n == value)
 			return (prev);
 		prev = prev->next;

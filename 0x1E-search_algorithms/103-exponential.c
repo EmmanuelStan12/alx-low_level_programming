@@ -8,7 +8,7 @@
  */
 void print_array(int *array, size_t size)
 {
-	long unsigned int i;
+	size_t i;
 
 	printf("Searching in array: ");
 	for (i = 0; i < size; i++)
